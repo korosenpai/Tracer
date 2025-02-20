@@ -12,7 +12,7 @@ OBJ = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
 # compiled and linked program (final executable)
 OUTDIR = out
-OUTFILE = $(OUTDIR)/Goopy
+OUTFILE = $(OUTDIR)/Tracer
 
 all: main
 
