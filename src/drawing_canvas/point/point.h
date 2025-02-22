@@ -5,11 +5,11 @@
 
 typedef struct {
 
-    Vector2 coords;
+    Vector2 pos;
     Color color;
 
     size_t stroke_size;  // radius of circle
-    const size_t min_stroke_size; // what will shrink to
+    size_t min_stroke_size; // what will shrink to
 
 } Point;
 

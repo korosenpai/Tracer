@@ -10,18 +10,22 @@ int main(void) {
     SetTargetFPS(FPS);
 
     const Vector2 canvas_offset = {100, 50};
-    setup_canvas((Rectangle){
+    canvas_setup((Rectangle){
         canvas_offset.x,
         canvas_offset.y,
         SCREEN_WIDTH - 2 * canvas_offset.x,
         SCREEN_HEIGHT - 2 * canvas_offset.y
     });
 
+    canvas_update_start();
+
     while (!WindowShouldClose()) {
+        float delta = GetFrameTime();
+
         BeginDrawing();
             ClearBackground(BG_COL);
 
-            update_canvas();
+            canvas_render();
 
             // FPS screen
             DrawFPS(SCREEN_WIDTH - 100, 20);
@@ -31,6 +35,7 @@ int main(void) {
 
     }
 
+    canvas_close();
     CloseWindow();
 
     return 0;
